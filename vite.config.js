@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: "/goit-neo-react-hw-module1/",
-});
+  base: mode === "github" ? "/goit-neo-react-hw-module1/" : "/",
+}));
